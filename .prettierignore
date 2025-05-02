@@ -1,0 +1,12 @@
+# 빌드 결과물
+dist/
+build/
+
+# 히스토리 파일
+.history/
+.history/**/*
+
+# 기타 제외할 경로
+node_modules/
+.git/
+.vscode/ 
