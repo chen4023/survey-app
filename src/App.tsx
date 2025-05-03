@@ -1,11 +1,19 @@
-import './App.css';
+import '@/App.css';
+
+import { Route, Routes } from 'react-router';
+
+import CompletionPage from './pages/CompletionPage';
+import SurveyPage from './pages/SurveyPage';
 
 function App() {
+  // const [answers, setAnswers] = useState<string>('');
   return (
-    <div className="m-4 rounded bg-amber-200 p-2 sm:p-3">
-      <p className="rounded bg-blue-500 p-3 lg:p-5">하이</p>
-      안녕하세요
-    </div>
+    <Routes>
+      <Route path="/done" element={<CompletionPage />} />
+      <Route path="/survey/:surveyId" element={<SurveyPage />}>
+        <Route path=":step" element={<SurveyPage />} />
+      </Route>
+    </Routes>
   );
 }
 

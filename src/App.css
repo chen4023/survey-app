@@ -1,7 +1,46 @@
 @import 'tailwindcss';
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  height: 100vh;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  outline: none;
+}
+
+input:focus {
+  border-color: #6542f1;
+}
+
+input:disabled {
+  background-color: #f6f6f6;
+  color: #c0c0c0;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 설문 컨테이너 */
+.survey-container {
+  @apply h-[590px] w-[940px] rounded-2xl bg-white p-[60px] shadow-sm;
+}
+/* 버튼 공통 css */
+.button-common {
+  @apply flex h-[53px] w-[200px] items-center rounded-sm px-21 py-4 text-lg font-semibold;
+}
+/* h2 */
+.h2 {
+  @apply text-2xl font-bold;
+}
+/* flex center */
+.flex-center {
+  @apply flex items-center justify-center;
 }
