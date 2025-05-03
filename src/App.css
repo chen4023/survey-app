@@ -10,7 +10,8 @@
   align-items: center;
 }
 
-input {
+input,
+textarea {
   outline: none;
 }
 
@@ -18,9 +19,34 @@ input:focus {
   border-color: #6542f1;
 }
 
+textarea:focus {
+  border-color: #6542f1;
+}
+
 input:disabled {
   background-color: #f6f6f6;
   color: #c0c0c0;
+}
+
+[type='checkbox'] {
+  appearance: none; /* 기본(네이티브) 모양을 제거 */
+  box-sizing: border-box;
+  background-clip: content-box;
+  border-radius: 100%;
+  padding: 0.25em;
+  width: 1.5em;
+  height: 1.5em;
+  border: 3px solid #e2dfdf;
+  cursor: pointer;
+}
+
+[type='checkbox']:checked {
+  border: 8px solid #6542f1;
+  font-weight: 900;
+}
+
+[type='checkbox']:checked ~ span {
+  font-weight: 600;
 }
 
 button {

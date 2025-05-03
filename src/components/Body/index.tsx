@@ -1,14 +1,22 @@
 import SelectInput from '@/components/SelectInput';
+import TextAreaInput from '@/components/TextAreaInput';
 import TextInput from '@/components/TextInput';
+import { BodyProps } from '@/types/type';
 
-export default function Body({ type }: { type: string }) {
+export default function Body({ type, options, answer, setAnswer }: BodyProps) {
   let InputComponent;
   if (type === 'select') {
-    InputComponent = <SelectInput />;
+    InputComponent = (
+      <SelectInput options={options} answer={answer} setAnswer={setAnswer} />
+    );
   } else if (type === 'text') {
-    InputComponent = <TextInput />;
+    InputComponent = (
+      <TextInput options={options} answer={answer} setAnswer={setAnswer} />
+    );
   } else if (type === 'textarea') {
-    InputComponent = null;
+    InputComponent = (
+      <TextAreaInput options={options} answer={answer} setAnswer={setAnswer} />
+    );
   }
   return <div className="w-full">{InputComponent}</div>;
 }

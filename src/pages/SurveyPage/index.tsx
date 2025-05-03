@@ -1,14 +1,17 @@
+import { useState } from 'react';
 import { useParams } from 'react-router';
 
 import ProgressIndicator from '@/components/ProgressIndicator';
 import QuestionBox from '@/components/QuestionBox';
 import { QUESTIONS } from '@/constants/question';
-import { QType } from '@/types/type';
+import { QuestionList } from '@/types/type';
 
 export default function SurveyPage() {
+  const [answers, setAnswers] = useState<(string | number[])[]>([]);
   const { step } = useParams();
   const STEP = parseInt(step!);
-  const questions: QType[] = QUESTIONS;
+  console.log(answers);
+  const questions: QuestionList = QUESTIONS;
   return (
     <div>
       <ProgressIndicator />
@@ -16,12 +19,14 @@ export default function SurveyPage() {
         question={questions[STEP]}
         questionLength={questions.length}
         step={STEP}
-        // answers={answers[STEP]}
-        // setAnswer={(newAnswer: string) => {
-        //   const newAnswers = [...answers];
-        //   newAnswers[STEP] = newAnswer;
-        //   setAnswers(newAnswers);
-        // }}
+        answer={answers[STEP]}
+        setAnswer={(newAnswer: string | number[]) => {
+          setAnswers((answers) => {
+            const newAnswers = [...answers];
+            newAnswers[STEP] = newAnswer;
+            return newAnswers;
+          });
+        }}
       />
     </div>
   );

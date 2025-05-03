@@ -5,16 +5,15 @@ type Props = {
   answer: string;
   setAnswer: (newAnswer: string) => void;
 };
-export default function TextInput({ options, answer, setAnswer }: Props) {
+export default function TextAreaInput({ options, answer, setAnswer }: Props) {
   return (
     <div className="flex-center">
-      <input
-        type="text"
+      <textarea
         value={answer ?? ''}
         onChange={(e) => setAnswer(e.target.value)}
-        className="ml-[28px] w-full rounded-[5px] border border-[#E0E0E0] px-[18px] py-[12px] text-lg"
+        className="ml-[28px] min-h-[196px] w-full rounded-[5px] border border-[#E0E0E0] px-[18px] py-[12px] text-lg"
         placeholder={options.placeholder}
-      ></input>
+      />
     </div>
   );
 }

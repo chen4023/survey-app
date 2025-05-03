@@ -9,7 +9,7 @@ export default function ActionButtons({ questionLength, step }: Props) {
   const isLast = questionLength - 1 === step;
   const navigate = useNavigate();
   return (
-    <div className="flex-center mt-[243px] gap-4">
+    <div className="flex-center absolute bottom-[61px] w-[88%] gap-4">
       {step === 0 || (
         <Button type="prev" onClick={() => navigate(`${step - 1}`)}>
           이전
