@@ -15,10 +15,7 @@ textarea {
   outline: none;
 }
 
-input:focus {
-  border-color: #6542f1;
-}
-
+input:focus,
 textarea:focus {
   border-color: #6542f1;
 }
@@ -26,6 +23,11 @@ textarea:focus {
 input:disabled {
   background-color: #f6f6f6;
   color: #c0c0c0;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 [type='checkbox'] {
@@ -47,11 +49,6 @@ input:disabled {
 
 [type='checkbox']:checked ~ span {
   font-weight: 600;
-}
-
-button {
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
 }
 
 /* 설문 컨테이너 */
