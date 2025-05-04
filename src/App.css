@@ -9,6 +9,19 @@
   justify-content: center;
   align-items: center;
 }
+@theme {
+  --color-primary: #6542f1;
+  --color-primary-font: #ffffff;
+  --color-primary-hover: #9982f4;
+  --color-primary-press: #4b31b0;
+  --color-disable: #ededed;
+  --color-disabled-font: #d0cdcd;
+  --color-secondary: #dedede;
+  --color-secondary-font: #3a3a3a;
+  --color-secondary-hover: #f3f3f3;
+  --color-secondary-press: #b8b7b9;
+  --color-secondary-hover: #f3f3f3;
+}
 
 input,
 textarea {
@@ -17,7 +30,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: #6542f1;
+  border-color: var(--color-primary);
 }
 
 input:disabled {
@@ -43,7 +56,7 @@ button {
 }
 
 [type='checkbox']:checked {
-  border: 8px solid #6542f1;
+  border: 8px solid var(--color-primary);
   font-weight: 900;
 }
 
@@ -57,7 +70,7 @@ button {
 }
 /* 버튼 공통 css */
 .button-common {
-  @apply flex h-[53px] w-[200px] items-center rounded-sm px-21 py-4 text-lg font-semibold;
+  @apply flex w-[200px] items-center rounded-sm px-21 py-4 text-lg font-semibold;
 }
 /* h2 */
 .h2 {
@@ -66,4 +79,12 @@ button {
 /* flex center */
 .flex-center {
   @apply flex items-center justify-center;
+}
+/* 버튼스타일 (secondary) */
+.secondary-btn {
+  @apply bg-secondary text-secondary-font hover:bg-secondary-hover active:bg-secondary-press disabled:bg-disable disabled:text-disabled-font;
+}
+/* 버튼스타일 (primary) */
+.primary-btn {
+  @apply bg-primary text-primary-font hover:bg-primary-hover active:bg-primary-press disabled:bg-disable disabled:text-disabled-font;
 }

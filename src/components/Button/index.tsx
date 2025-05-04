@@ -9,9 +9,9 @@ export default function Button({
 }) {
   let buttonStyle;
   if (type === 'prev') {
-    buttonStyle = 'bg-[#DEDEDE] text-[#3A3A3A] hover:bg-[#F3F3F3]';
+    buttonStyle = 'secondary-btn';
   } else {
-    buttonStyle = 'bg-[#6542F1] text-white hover:bg-[#9982F4] ';
+    buttonStyle = 'primary-btn';
   }
   return (
     <button className={`${buttonStyle} button-common`} onClick={onClick}>

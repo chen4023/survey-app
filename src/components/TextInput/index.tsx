@@ -12,7 +12,7 @@ export default function TextInput({ options, answer, setAnswer }: Props) {
         type="text"
         value={answer ?? ''}
         onChange={(e) => setAnswer(e.target.value)}
-        className="ml-[28px] w-full rounded-[5px] border border-[#E0E0E0] px-[18px] py-[12px] text-lg"
+        className="mx-[28px] w-full rounded-[5px] border border-[#E0E0E0] px-[18px] py-[12px] text-lg"
         placeholder={options.placeholder}
       ></input>
     </div>
