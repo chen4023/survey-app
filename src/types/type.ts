@@ -31,6 +31,8 @@ export type Question = TextQuestion | TextareaQuestion | SelectQuestion;
 // 전체 질문 목록 타입
 export type QuestionList = Question[];
 
+export type Survey = { id: number; title: string; questions: QuestionList };
+
 export type BodyProps =
   | {
       type: 'text' | 'textarea';

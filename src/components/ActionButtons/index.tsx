@@ -1,12 +1,17 @@
 import { useNavigate } from 'react-router';
 
 import Button from '@/components/Button';
-type Props = {
-  questionLength: number;
-  step: number;
-};
-export default function ActionButtons({ questionLength, step }: Props) {
-  const isLast = questionLength - 1 === step;
+import useStep from '@/hooks/useStep';
+import useSurveyData from '@/hooks/useSurveyData';
+
+export default function ActionButtons() {
+  const step = useStep();
+  const { data: survey } = useSurveyData();
+  const questionLength = survey?.questions?.length;
+  let isLast;
+  if (questionLength) {
+    isLast = questionLength - 1 === step;
+  }
   const navigate = useNavigate();
   return (
     <div className="flex-center absolute bottom-[61px] w-[88%] gap-4">
